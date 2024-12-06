@@ -1,0 +1,166 @@
+.card {
+  width: 80%;
+  background: white;
+  border-radius: 2rem;
+  padding: 3.2rem;
+  margin: 0 auto;
+}
+@media (max-width: 1200px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.profile {
+  font-weight: 600;
+  font-size: 2.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.profile_info {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-template-rows: auto auto;
+  grid-column-gap: 2.4rem;
+  grid-row-gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.avatar {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50rem;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  align-self: start;
+}
+
+.full_name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  align-self: center;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 140%;
+  align-self: center;
+}
+
+.profile_properties {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+@media (max-width: 1000px) {
+  .profile_properties {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .profile_properties {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
+
+.property {
+  background: rgba(58, 58, 58, 0.04);
+  border-radius: 2rem;
+  padding: 1.9rem 1.6rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto auto;
+  grid-column-gap: 1.6rem;
+  grid-row-gap: 0.4rem;
+}
+.property_icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+@media (max-width: 1000px) {
+  .property_icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.property_icon__container {
+  background: rgba(58, 58, 58, 0.08);
+  border-radius: 50rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  align-self: center;
+}
+@media (max-width: 1000px) {
+  .property_icon__container {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.property_text {
+  font-size: 2rem;
+  font-weight: 400;
+  align-self: center;
+}
+.property_info {
+  color: #84868C;
+  font-size: 1.4rem;
+  font-weight: 400;
+  align-self: center;
+}
+
+.hr {
+  border: none;
+  border-bottom: rgba(33, 34, 35, 0.08) solid 1px;
+  margin-bottom: 2.4rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: max-content max-content auto;
+  grid-column-gap: 1.6rem;
+}
+
+.button {
+  background: white;
+  border: rgba(58, 58, 58, 0.12) solid 1px;
+  border-radius: 0.8rem;
+  padding: 1.2rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  transform: translateY(-0.1rem);
+  background: #fafafa;
+}
+.button:active {
+  transform: translateY(0.1rem);
+}
+.button_icon {
+  width: 2.3rem;
+  height: 1.9rem;
+}
+.button_colored {
+  background: #D44333;
+  color: white;
+  justify-self: end;
+  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+}
+.button_colored:hover {
+  background: #c93e2f;
+}
+
+/*# sourceMappingURL=RepoCardDetailed.module.css.map */
