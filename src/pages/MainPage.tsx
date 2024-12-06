@@ -9,7 +9,7 @@ const MainPage = () => {
     return (
         <div className={'container'}>
             MainPage
-            <SortFilter/>
+            <RepoCardDetailed/>
         </div>
     );
 };

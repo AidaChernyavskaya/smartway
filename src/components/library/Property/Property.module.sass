@@ -1,0 +1,38 @@
+.property
+  background: rgba(#3A3A3A, .04)
+  border-radius: 2rem
+  padding: 1.9rem 1.6rem
+  display: grid
+  grid-template-columns: max-content 1fr
+  grid-template-rows: auto auto
+  grid-column-gap: 1.6rem
+  grid-row-gap: .4rem
+  &_icon
+    width: 1.6rem
+    height: 1.6rem
+    @media (max-width: 1000px)
+      width: 2rem
+      height: 2rem
+    &__container
+      background: rgba(#3A3A3A, .08)
+      border-radius: 50rem
+      height: 3.2rem
+      width: 3.2rem
+      display: flex
+      align-items: center
+      justify-content: center
+      grid-column: 1/2
+      grid-row: 1/-1
+      align-self: center
+      @media (max-width: 1000px)
+        width: 4rem
+        height: 4rem
+  &_text
+    font-size: 2rem
+    font-weight: 400
+    align-self: center
+  &_info
+    color: #84868C
+    font-size: 1.4rem
+    font-weight: 400
+    align-self: center
