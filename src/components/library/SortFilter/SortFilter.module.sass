@@ -1,0 +1,44 @@
+.sort_container
+  width: 30rem
+  @media (max-width: 500px)
+    width: 100%
+
+.sort
+  outline: none
+  border: none
+  background: white
+  border-radius: 1.2rem
+  padding: 1.2rem 2rem
+  cursor: pointer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 30rem
+  @media (max-width: 500px)
+    width: 100%
+  &_name
+    font-size: 1.6rem
+    color: #161616
+  &_img
+    width: 1.4rem
+    height: 1.4rem
+
+.is_open
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 0
+  border-bottom: rgba(#161616, .1) solid 1px
+
+.variants
+  list-style: none
+  background: white
+  border-bottom-left-radius: 1.2rem
+  border-bottom-right-radius: 1.2rem
+  &_item
+    font-size: 1.6rem
+    color: #161616
+    padding: 1.2rem 2rem
+    cursor: pointer
+    &:not(:last-child)
+      border-bottom: rgba(#161616, .1) solid 1px
+
+
