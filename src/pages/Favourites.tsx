@@ -2,7 +2,7 @@ import React from 'react';
 
 const Favourites = () => {
     return (
-        <div>
+        <div className={'container'}>
             Favourites
         </div>
     );

@@ -1,0 +1,72 @@
+.navbar {
+  background: #3A3A3A;
+  height: 7.2rem;
+  width: 100%;
+  padding: 1.6rem 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 1.6rem 5rem;
+  }
+}
+@media (max-width: 400px) {
+  .navbar {
+    padding: 1.6rem 2rem;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+.logo_title {
+  color: white;
+  font-size: 1.4rem;
+}
+.logo_img {
+  height: 2.4rem;
+  width: 2.4rem;
+  margin-right: 0.8rem;
+}
+.logo:hover {
+  transform: translateY(-0.07rem);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.button_icon {
+  width: 2rem;
+  height: 2rem;
+}
+.button_transparent {
+  background: transparent;
+  padding: 1rem 2rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+.button_transparent:hover {
+  transform: translateY(-0.07rem);
+  background: rgba(255, 255, 255, 0.03);
+}
+.button_filled {
+  background: rgba(255, 255, 255, 0.36);
+  padding: 0.8rem;
+  outline: rgba(255, 255, 255, 0.08) solid 0.4rem;
+}
+
+/*# sourceMappingURL=Navbar.module.css.map */

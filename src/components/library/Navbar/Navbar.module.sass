@@ -1,0 +1,54 @@
+.navbar
+  background: #3A3A3A
+  height: 7.2rem
+  width: 100%
+  padding: 1.6rem 12rem
+  display: flex
+  justify-content: space-between
+  align-items: center
+  @media (max-width: 1000px)
+    padding: 1.6rem 5rem
+  @media (max-width: 400px)
+    padding: 1.6rem 2rem
+
+.logo
+  display: flex
+  align-items: center
+  background: none
+  border: none
+  transition: all .3s ease
+  cursor: pointer
+  padding: 1rem
+  border-radius: 1rem
+  text-decoration: none
+  &_title
+    color: white
+    font-size: 1.4rem
+  &_img
+    height: 2.4rem
+    width: 2.4rem
+    margin-right: .8rem
+  &:hover
+    transform: translateY(-.07rem)
+    background: rgba(white, .03)
+
+.button
+  outline: none
+  border: none
+  border-radius: 1rem
+  transition: all .3s ease
+  &_icon
+    width: 2rem
+    height: 2rem
+  &_transparent
+    background: transparent
+    padding: 1rem 2rem
+    margin-right: 1.5rem
+    cursor: pointer
+    &:hover
+      transform: translateY(-.07rem)
+      background: rgba(white, .03)
+  &_filled
+    background: rgba(white, .36)
+    padding: .8rem
+    outline: rgba(white, .08) solid .4rem
