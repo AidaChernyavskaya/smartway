@@ -1,0 +1,24 @@
+.back {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.back_icon {
+  width: 2rem;
+  height: 1.8rem;
+  margin-right: 0.5rem;
+}
+.back_text {
+  font-size: 1.4rem;
+}
+.back:hover {
+  transform: translateY(-0.1rem);
+}
+.back:active {
+  transform: translateY(0.05rem);
+}
+
+/*# sourceMappingURL=ButtonBack.module.css.map */
