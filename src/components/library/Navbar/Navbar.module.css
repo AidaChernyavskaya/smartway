@@ -58,6 +58,7 @@
   padding: 1rem 2rem;
   margin-right: 1.5rem;
   cursor: pointer;
+  position: relative;
 }
 .button_transparent:hover {
   transform: translateY(-0.07rem);
@@ -67,6 +68,20 @@
   background: rgba(255, 255, 255, 0.36);
   padding: 0.8rem;
   outline: rgba(255, 255, 255, 0.08) solid 0.4rem;
+}
+
+.favourites {
+  background: #D44333;
+  color: white;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  right: 15%;
 }
 
 /*# sourceMappingURL=Navbar.module.css.map */

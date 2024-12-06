@@ -7,6 +7,9 @@ import cn from 'classnames';
 import {Link} from "react-router";
 
 const Navbar = () => {
+
+    const likes = 0
+
     return (
         <header className={styles.navbar}>
             <Link to={'/'} className={styles.logo}>
@@ -17,6 +20,7 @@ const Navbar = () => {
                 <Link to={'/favourites'}>
                     <button className={cn(styles.button, styles.button_transparent)}>
                         <img src={HeartFilled} alt={'Open favourites'} className={styles.button_icon}/>
+                        {likes ? <div className={styles.favourites}>{likes}</div> : <></>}
                     </button>
                 </Link>
                 <button className={cn( styles.button, styles.button_filled)}>
