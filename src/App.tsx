@@ -1,10 +1,9 @@
 import React from 'react';
+import AppRouter from "./components/router/AppRouter";
 
 function App() {
   return (
-    <div>
-      <h1>Smartway</h1>
-    </div>
+    <AppRouter/>
   );
 }
 
