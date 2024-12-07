@@ -1,6 +1,6 @@
 import {makeAutoObservable} from "mobx";
 import RepositoriesService from "../../API/RepositoriesService";
-import {Repository, Sort} from "../../types";
+import {Repository, sortFields, sortOrder} from "../../types";
 
 class RepositoriesStore {
     repositories: Array<Repository> = [];
@@ -15,14 +15,16 @@ class RepositoriesStore {
         makeAutoObservable(this);
     }
 
-    async fetchRepositories (searchValue: string, sortValue: Sort) {
+    async fetchRepositories (searchValue: string, sortValue: sortFields, order: sortOrder) {
         if (searchValue.length === 0) {
             this.repositories = [];
             this.totalCount = 0;
         } else {
             this.setIsLoading(true);
             this.error = null;
-            await RepositoriesService.getByParams({q: searchValue, sort: sortValue, per_page: this.perPage, page: this.currentPage})
+            await RepositoriesService.getByParams(
+                {q: searchValue, sort: sortValue, order: order, per_page: this.perPage, page: this.currentPage}
+            )
                 .then(response => {
                     this.repositories = response.data.items;
                     this.totalCount = response.data.total_count;
@@ -41,14 +43,14 @@ class RepositoriesStore {
         this.isLoading = loading;
     }
 
-    prevPage = (searchValue: string, sortValue: Sort) => {
+    prevPage = (searchValue: string, sortValue: sortFields, order: sortOrder) => {
         this.currentPage--;
-        this.fetchRepositories(searchValue, sortValue);
+        this.fetchRepositories(searchValue, sortValue, order);
     }
 
-    nextPage = (searchValue: string, sortValue: Sort) => {
+    nextPage = (searchValue: string, sortValue: sortFields, order: sortOrder) => {
         this.currentPage++;
-        this.fetchRepositories(searchValue, sortValue);
+        this.fetchRepositories(searchValue, sortValue, order);
     }
 
 }

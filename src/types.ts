@@ -17,4 +17,23 @@ export type Owner = {
     avatar_url: string;
 }
 
-export type Sort = 'stars' | 'forks' | 'updated';
+// export type Sort = 'stars' | 'forks' | 'updated';
+
+export enum sortFields {
+    stars = 'stars',
+    forks = 'forks',
+    updated = 'updated'
+}
+
+export enum sortOrder {
+    desc = 'desc',
+    asc = 'asc'
+}
+
+
+export type SortingVariable = {
+    sortField: sortFields;
+    sortOrder: sortOrder;
+    text: string;
+}
+
