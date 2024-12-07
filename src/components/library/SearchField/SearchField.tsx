@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SearchField.module.css';
-import searchValueStore from "../../stores/SearchValue";
+import searchValueStore from "../../stores/SearchValueStore";
 import {observer} from "mobx-react-lite";
 
 const SearchField = observer(() => {

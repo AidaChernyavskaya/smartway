@@ -14,6 +14,7 @@
   justify-content: space-between
   align-items: center
   width: 30rem
+  position: relative
   @media (max-width: 500px)
     width: 100%
   &_name
@@ -26,13 +27,16 @@
 .is_open
   border-bottom-left-radius: 0
   border-bottom-right-radius: 0
-  border-bottom: rgba(#161616, .1) solid 1px
+  //border-bottom: rgba(#161616, .1) solid 1px
 
 .variants
   list-style: none
   background: white
   border-bottom-left-radius: 1.2rem
   border-bottom-right-radius: 1.2rem
+  position: absolute
+  width: 30rem
+  box-shadow: 0 .6rem .6rem rgba(112, 112, 112, 0.44)
   &_item
     font-size: 1.6rem
     color: #161616
@@ -40,5 +44,7 @@
     cursor: pointer
     &:not(:last-child)
       border-bottom: rgba(#161616, .1) solid 1px
+    &:first-child
+      border-top: rgba(#161616, .1) solid 1px
 
 

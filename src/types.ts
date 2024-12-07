@@ -17,8 +17,4 @@ export type Owner = {
     avatar_url: string;
 }
 
-export type ReposInfo = {
-    total_count: number;
-    incomplete_results: boolean;
-    items: Repository[];
-}
+export type Sort = 'stars' | 'forks' | 'updated';

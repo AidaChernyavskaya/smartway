@@ -18,6 +18,7 @@
   justify-content: space-between;
   align-items: center;
   width: 30rem;
+  position: relative;
 }
 @media (max-width: 500px) {
   .sort {
@@ -36,7 +37,6 @@
 .is_open {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: rgba(22, 22, 22, 0.1) solid 1px;
 }
 
 .variants {
@@ -44,6 +44,9 @@
   background: white;
   border-bottom-left-radius: 1.2rem;
   border-bottom-right-radius: 1.2rem;
+  position: absolute;
+  width: 30rem;
+  box-shadow: 0 0.6rem 0.6rem rgba(112, 112, 112, 0.44);
 }
 .variants_item {
   font-size: 1.6rem;
@@ -53,6 +56,9 @@
 }
 .variants_item:not(:last-child) {
   border-bottom: rgba(22, 22, 22, 0.1) solid 1px;
+}
+.variants_item:first-child {
+  border-top: rgba(22, 22, 22, 0.1) solid 1px;
 }
 
 /*# sourceMappingURL=SortFilter.module.css.map */

@@ -4,14 +4,16 @@ import repositoriesStore from "../components/stores/RepositoriesStore";
 import RepoCardMini from "../components/repositories/RepoCardMini/RepoCardMini";
 import SearchField from "../components/library/SearchField/SearchField";
 import SortFilter from "../components/library/SortFilter/SortFilter";
-import searchValueStore from "../components/stores/SearchValue";
+import searchValueStore from "../components/stores/SearchValueStore";
+import sortValueStore from "../components/stores/SortValueStore";
 
 const MainPage = observer(() => {
     const searchValue = searchValueStore.searchValue;
+    const sortValue = sortValueStore.sortValue;
 
     useEffect(() => {
-        repositoriesStore.fetchRepositories(searchValue);
-    }, [searchValue]);
+        repositoriesStore.fetchRepositories(searchValue, sortValue);
+    }, [searchValue, sortValue]);
 
     if (repositoriesStore.isLoading) {
         return <div>Загрузка...</div>;
@@ -38,14 +40,14 @@ const MainPage = observer(() => {
 
             <div className={'pagination'}>
                 <button
-                    className={'button_colored'} onClick={() => repositoriesStore.prevPage(searchValue)}
+                    className={'button_colored'} onClick={() => repositoriesStore.prevPage(searchValue, sortValue)}
                     disabled={repositoriesStore.currentPage === 1}
                 >
                     Prev
                 </button>
                 <p className={'pages'}>page {repositoriesStore.currentPage} from {repositoriesStore.totalPages}</p>
                 <button
-                    className={'button_colored'} onClick={() => repositoriesStore.nextPage(searchValue)}
+                    className={'button_colored'} onClick={() => repositoriesStore.nextPage(searchValue, sortValue)}
                     disabled={repositoriesStore.currentPage  === repositoriesStore.totalPages}
                 >
                     Next
