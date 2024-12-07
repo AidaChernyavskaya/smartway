@@ -16,3 +16,9 @@ export type Owner = {
     login: string;
     avatar_url: string;
 }
+
+export type ReposInfo = {
+    total_count: number;
+    incomplete_results: boolean;
+    items: Repository[];
+}

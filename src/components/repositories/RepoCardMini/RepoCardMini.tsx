@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styles from './RepoCardMini.module.css';
 import {Repository} from "../../../types";
 import StarIcon from '../../../static/star.svg';
@@ -7,24 +7,28 @@ import HeartTransparent from '../../../static/heart_transparent.svg';
 import CopyIcon from '../../../static/copy.svg';
 import cn from "classnames";
 
-const repo: Repository = {
-    id: 12,
-    full_name: 'wewewe/sdsd',
-    owner: {
-        login: '@dfdfdf',
-        avatar_url: 'https://avatars.githubusercontent.com/u/1342004?v=4',
-    },
-    name: 'awsd',
-    description: 'dfdff dfdfdsf dsfdfdc',
-    stargazers_count: 23,
-    forks_count: 445,
-    archived: true,
-    language: 'SD',
-    created_at: "2011-01-26T19:01:12Z",
-    updated_at: "2022-01-26T19:01:12Z",
+// const repo: Repository = {
+//     id: 12,
+//     full_name: 'wewewe/sdsd',
+//     owner: {
+//         login: '@dfdfdf',
+//         avatar_url: 'https://avatars.githubusercontent.com/u/1342004?v=4',
+//     },
+//     name: 'awsd',
+//     description: 'dfdff dfdfdsf dsfdfdc',
+//     stargazers_count: 23,
+//     forks_count: 445,
+//     archived: true,
+//     language: 'SD',
+//     created_at: "2011-01-26T19:01:12Z",
+//     updated_at: "2022-01-26T19:01:12Z",
+// }
+
+interface RepoCardMini {
+    repo: Repository;
 }
 
-const RepoCardMini = () => {
+const RepoCardMini: FC<RepoCardMini> = ({repo}) => {
     return (
         <div className={styles.card}>
             <div className={styles.card_field}>
