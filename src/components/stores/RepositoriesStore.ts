@@ -31,7 +31,11 @@ class RepositoriesStore {
                     this.totalPages = Math.ceil(response.data.total_count/ this.perPage);
                 })
                 .catch(error => {
-                    this.error = error instanceof Error ? error.message : "Что-то пошло не так";
+                    if(error.status === 403) {
+                        this.error = '403 - превышен лимит запросов к API, попробуйте позже'
+                    } else {
+                        this.error = error instanceof Error ? error.message : "Что-то пошло не так";
+                    }
                 })
                 .finally(() => {
                     this.setIsLoading(false);
@@ -52,6 +56,15 @@ class RepositoriesStore {
         this.currentPage++;
         this.fetchRepositories(searchValue, sortValue, order);
     }
+
+    resetPages = () => {
+        this.currentPage = 1;
+        this.totalPages = 0;
+    };
+
+    resetRepositories = () => {
+        this.repositories = [];
+    };
 
 }
 
