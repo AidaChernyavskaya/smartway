@@ -9,7 +9,7 @@ const PaginationButtons = observer(() => {
     const searchValue = searchValueStore.searchValue;
     const sortValue = sortValueStore.sortValue;
     const order = sortValueStore.order;
-    const totalCoint = repositoriesStore.totalCount;
+    const totalCount = repositoriesStore.totalCount;
 
     const prevPage = () => {
         repositoriesStore.prevPage(searchValue, sortValue, order)
@@ -19,7 +19,7 @@ const PaginationButtons = observer(() => {
         repositoriesStore.nextPage(searchValue, sortValue, order)
     }
 
-    if( totalCoint === 0) {
+    if( totalCount === 0) {
         return <></>
     }
 

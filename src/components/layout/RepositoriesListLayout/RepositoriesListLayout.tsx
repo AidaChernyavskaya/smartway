@@ -20,7 +20,7 @@ const RepositoriesListLayout = observer(() => {
             repositoriesStore.resetPages();
             repositoriesStore.resetRepositories();
             repositoriesStore.fetchRepositories(searchValue, sortValue, order);
-        }, 1000)
+        }, 300)
         return () => clearTimeout(timerId);
     }, [searchValue, sortValue, order]);
 
@@ -38,7 +38,6 @@ const RepositoriesListLayout = observer(() => {
 
     return (
         <div>
-            <SortFieldLayout/>
             <div className={styles.repos}>
                 {repositoriesStore.repositories.map((repo) => (
                     <RepoCardMini repo={repo} key={repo.id}/>

@@ -7,10 +7,6 @@ import styles from './SortFieldLayout.module.css';
 const SortFieldLayout = observer(() => {
     const totalCount = repositoriesStore.totalCount;
 
-    if (totalCount === 0) {
-        return <></>
-    }
-
     return (
         <div className={styles.repos_info}>
             <h2 className={styles.result}>Result: {totalCount} repositories</h2>
