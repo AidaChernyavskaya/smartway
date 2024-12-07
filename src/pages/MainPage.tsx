@@ -6,6 +6,7 @@ import SearchField from "../components/library/SearchField/SearchField";
 import searchValueStore from "../components/stores/SearchValueStore";
 import sortValueStore from "../components/stores/SortValueStore";
 import SortFieldLayout from "../components/layout/SortFieldLayout/SortFieldLayout";
+import PaginationButtons from "../components/layout/PaginationButtons/PaginationButtons";
 
 const MainPage = observer(() => {
     const searchValue = searchValueStore.searchValue;
@@ -38,21 +39,7 @@ const MainPage = observer(() => {
                 ))}
             </div>
 
-            <div className={'pagination'}>
-                <button
-                    className={'button_colored'} onClick={() => repositoriesStore.prevPage(searchValue, sortValue, order)}
-                    disabled={repositoriesStore.currentPage === 1}
-                >
-                    Prev
-                </button>
-                <p className={'pages'}>page {repositoriesStore.currentPage} from {repositoriesStore.totalPages}</p>
-                <button
-                    className={'button_colored'} onClick={() => repositoriesStore.nextPage(searchValue, sortValue, order)}
-                    disabled={repositoriesStore.currentPage  === repositoriesStore.totalPages}
-                >
-                    Next
-                </button>
-            </div>
+            <PaginationButtons/>
         </div>
     );
 });

@@ -1,0 +1,30 @@
+.pagination
+  display: flex
+  justify-content: center
+  align-items: center
+
+.pages
+  margin-right: 2.4rem
+  font-size: 2rem
+
+.button_colored
+  border: none
+  background: #D44333
+  padding: 1rem 2rem
+  border-radius: 1.2rem
+  color: white
+  cursor: pointer
+  transition: all .3s ease
+  font-size: 1.6rem
+  &:not(:last-child)
+    margin-right: 2.4rem
+  &:hover
+    transform: translateY(-.1rem)
+    background: #c93e2f
+  &:active
+    transform: translateY(.1rem)
+  &:disabled
+    background: #b7b7b7
+    color: #101828
+    cursor: auto
+    transform: none

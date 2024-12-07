@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pages {
+  margin-right: 2.4rem;
+  font-size: 2rem;
+}
+
+.button_colored {
+  border: none;
+  background: #D44333;
+  padding: 1rem 2rem;
+  border-radius: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.6rem;
+}
+.button_colored:not(:last-child) {
+  margin-right: 2.4rem;
+}
+.button_colored:hover {
+  transform: translateY(-0.1rem);
+  background: #c93e2f;
+}
+.button_colored:active {
+  transform: translateY(0.1rem);
+}
+.button_colored:disabled {
+  background: #b7b7b7;
+  color: #101828;
+  cursor: auto;
+  transform: none;
+}
+
+/*# sourceMappingURL=PaginationButtons.module.css.map */
