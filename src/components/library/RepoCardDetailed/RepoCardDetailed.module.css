@@ -54,43 +54,4 @@
   margin-bottom: 2.4rem;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: max-content max-content auto;
-  grid-column-gap: 1.6rem;
-}
-
-.button {
-  background: white;
-  border: rgba(58, 58, 58, 0.12) solid 1px;
-  border-radius: 0.8rem;
-  padding: 1.2rem 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.button:hover {
-  transform: translateY(-0.1rem);
-  background: #fafafa;
-}
-.button:active {
-  transform: translateY(0.1rem);
-}
-.button_icon {
-  width: 2.3rem;
-  height: 1.9rem;
-}
-.button_colored {
-  background: #D44333;
-  color: white;
-  justify-self: end;
-  font-size: 1.6rem;
-  padding: 1.2rem 1.6rem;
-}
-.button_colored:hover {
-  background: #c93e2f;
-}
-
 /*# sourceMappingURL=RepoCardDetailed.module.css.map */

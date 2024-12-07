@@ -5,6 +5,8 @@ import cn from "classnames";
 import HeartTransparent from "../../../static/heart_transparent.svg";
 import CopyIcon from "../../../static/copy.svg";
 import ProfileProperties from "../../layout/ProfileProperties/ProfileProperties";
+import ButtonsGroupCardMini from "../../layout/ButtonsGroupCardMini/ButtonsGroupCardMini";
+import ButtonsGroupCardDetailed from "../../layout/ButtonsGroupCardDetailed/ButtonsGroupCardDetailed";
 
 export const repo: Repository = {
     id: 12,
@@ -38,17 +40,19 @@ const RepoCardDetailed = () => {
 
             <hr className={styles.hr}/>
 
-            <div className={styles.buttons}>
-                <button className={cn(styles.button, styles.button_transparent)}>
-                    <img src={HeartTransparent} alt={'Add to favourites'} className={cn(styles.button_icon, styles.heart)}/>
-                </button>
-                <button className={cn(styles.button, styles.button_transparent)} >
-                    <img src={CopyIcon} alt={'Copy URL'} className={styles.button_icon}/>
-                </button>
-                <button className={cn(styles.button, styles.button_colored)}>
-                    <p className={styles.button_text}>Открыть репозиторий</p>
-                </button>
-            </div>
+            <ButtonsGroupCardDetailed/>
+
+            {/*<div className={styles.buttons}>*/}
+            {/*    <button className={cn(styles.button, styles.button_transparent)}>*/}
+            {/*        <img src={HeartTransparent} alt={'Add to favourites'} className={cn(styles.button_icon, styles.heart)}/>*/}
+            {/*    </button>*/}
+            {/*    <button className={cn(styles.button, styles.button_transparent)} >*/}
+            {/*        <img src={CopyIcon} alt={'Copy URL'} className={styles.button_icon}/>*/}
+            {/*    </button>*/}
+            {/*    <button className={cn(styles.button, styles.button_colored)}>*/}
+            {/*        <p className={styles.button_text}>Открыть репозиторий</p>*/}
+            {/*    </button>*/}
+            {/*</div>*/}
 
         </div>
     );

@@ -19,42 +19,4 @@
   overflow: hidden;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: max-content max-content auto;
-  grid-column-gap: 1.6rem;
-}
-
-.button {
-  background: white;
-  border: rgba(58, 58, 58, 0.12) solid 1px;
-  border-radius: 0.8rem;
-  padding: 0.8rem 0.7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.button:hover {
-  transform: translateY(-0.1rem);
-  background: #fafafa;
-}
-.button:active {
-  transform: translateY(0.1rem);
-}
-.button_icon {
-  width: 1.8rem;
-  height: 1.5rem;
-}
-.button_colored {
-  background: #D44333;
-  color: white;
-  width: 12rem;
-  justify-self: end;
-}
-.button_colored:hover {
-  background: #c93e2f;
-}
-
 /*# sourceMappingURL=RepoCardMini.module.css.map */

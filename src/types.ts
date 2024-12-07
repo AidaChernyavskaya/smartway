@@ -28,7 +28,6 @@ export enum sortOrder {
     asc = 'asc'
 }
 
-
 export type SortingVariable = {
     sortField: sortFields;
     sortOrder: sortOrder;
