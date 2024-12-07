@@ -9,7 +9,6 @@ class SearchValueStore {
 
     setSearchValue = (value: string) => {
         this.searchValue = value;
-        console.log(value);
     };
 }
 

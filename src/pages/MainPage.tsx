@@ -12,12 +12,15 @@ const MainPage = observer(() => {
     const sortValue = sortValueStore.sortValue;
 
     useEffect(() => {
-        repositoriesStore.fetchRepositories(searchValue, sortValue);
+        let timerId = setTimeout(() => {
+            repositoriesStore.fetchRepositories(searchValue, sortValue);
+        }, 1000)
+        return () => clearTimeout(timerId);
     }, [searchValue, sortValue]);
 
-    if (repositoriesStore.isLoading) {
-        return <div>Загрузка...</div>;
-    }
+    // if (repositoriesStore.isLoading) {
+    //     return <div>Загрузка...</div>;
+    // }
 
     if (repositoriesStore.error) {
         return <div>Ошибка: {repositoriesStore.error}</div>;
