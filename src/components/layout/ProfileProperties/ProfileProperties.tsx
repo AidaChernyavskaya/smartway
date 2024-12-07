@@ -6,7 +6,7 @@ import ArchiveIcon from "../../../static/archive.svg";
 import LanguageIcon from "../../../static/language.svg";
 import FolderIcon from "../../../static/folder.svg";
 import UpdateIcon from "../../../static/update.svg";
-import {repo} from "../RepoCardDetailed/RepoCardDetailed";
+import {repo} from "../../library/RepoCardDetailed/RepoCardDetailed";
 import Property from "../../library/Property/Property";
 
 

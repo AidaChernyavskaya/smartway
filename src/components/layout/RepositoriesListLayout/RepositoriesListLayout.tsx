@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import repositoriesStore from "../../stores/RepositoriesStore";
-import RepoCardMini from "../../repositories/RepoCardMini/RepoCardMini";
+import RepoCardMini from "../../library/RepoCardMini/RepoCardMini";
 import styles from './RepositoriesListLayout.module.css';
 import {observer} from "mobx-react-lite";
 import searchValueStore from "../../stores/SearchValueStore";

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Repository} from "../../../types";
-import styles from "../RepoCardDetailed/RepoCardDetailed.module.css";
+import styles from "./RepoCardDetailed.module.css";
 import cn from "classnames";
 import HeartTransparent from "../../../static/heart_transparent.svg";
 import CopyIcon from "../../../static/copy.svg";
-import ProfileProperties from "../ProfileProperties/ProfileProperties";
+import ProfileProperties from "../../layout/ProfileProperties/ProfileProperties";
 
 export const repo: Repository = {
     id: 12,

@@ -17,8 +17,6 @@ export type Owner = {
     avatar_url: string;
 }
 
-// export type Sort = 'stars' | 'forks' | 'updated';
-
 export enum sortFields {
     stars = 'stars',
     forks = 'forks',
@@ -37,3 +35,8 @@ export type SortingVariable = {
     text: string;
 }
 
+export type MiniTag = {
+    src: string;
+    alt: string;
+    info: number | string;
+}

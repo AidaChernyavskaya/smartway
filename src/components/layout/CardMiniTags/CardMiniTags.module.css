@@ -1,0 +1,30 @@
+.card_field {
+  display: grid;
+  grid-template-columns: auto max-content max-content;
+  grid-column-gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.avatar {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  border-radius: 1.2rem;
+  background: #F1F5F9;
+  padding: 0.5rem 1rem;
+}
+.tag_icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 0.5rem;
+}
+.tag_text {
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=CardMiniTags.module.css.map */
