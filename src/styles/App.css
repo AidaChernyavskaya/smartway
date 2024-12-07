@@ -30,17 +30,6 @@ html {
   }
 }
 
-.result {
-  font-size: 2.2rem;
-  color: #101828;
-  font-weight: 600;
-}
-@media (max-width: 750px) {
-  .result {
-    margin-top: 2rem;
-  }
-}
-
 .repos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
@@ -84,18 +73,6 @@ html {
   color: #101828;
   cursor: auto;
   transform: none;
-}
-
-.repos_info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-@media (max-width: 750px) {
-  .repos_info {
-    flex-direction: column-reverse;
-  }
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -3,9 +3,9 @@ import {observer} from "mobx-react-lite";
 import repositoriesStore from "../components/stores/RepositoriesStore";
 import RepoCardMini from "../components/repositories/RepoCardMini/RepoCardMini";
 import SearchField from "../components/library/SearchField/SearchField";
-import SortFilter from "../components/library/SortFilter/SortFilter";
 import searchValueStore from "../components/stores/SearchValueStore";
 import sortValueStore from "../components/stores/SortValueStore";
+import SortFieldLayout from "../components/layout/SortFieldLayout/SortFieldLayout";
 
 const MainPage = observer(() => {
     const searchValue = searchValueStore.searchValue;
@@ -30,11 +30,7 @@ const MainPage = observer(() => {
     return (
         <div className={'container'}>
             <SearchField/>
-
-            <div className={'repos_info'}>
-                <h2 className={'result'}>Result: {repositoriesStore.totalCount} repositories</h2>
-                <SortFilter/>
-            </div>
+            <SortFieldLayout/>
 
             <div className={'repos'}>
                 {repositoriesStore.repositories.map((repo) => (
