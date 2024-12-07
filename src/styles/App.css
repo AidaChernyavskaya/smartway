@@ -74,5 +74,11 @@ html {
 .button_colored:active {
   transform: translateY(0.1rem);
 }
+.button_colored:disabled {
+  background: #b7b7b7;
+  color: #101828;
+  cursor: auto;
+  transform: none;
+}
 
 /*# sourceMappingURL=App.css.map */

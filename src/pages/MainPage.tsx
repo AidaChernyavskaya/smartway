@@ -26,9 +26,19 @@ const MainPage = observer(() => {
             </div>
 
             <div className={'pagination'}>
-                <button className={'button_colored'}>Prev</button>
-                <p className={'pages'}>pagination</p>
-                <button className={'button_colored'}>Next</button>
+                <button
+                    className={'button_colored'} onClick={() => repositoriesStore.prevPage('df')}
+                    disabled={repositoriesStore.currentPage === 1}
+                >
+                    Prev
+                </button>
+                <p className={'pages'}>page {repositoriesStore.currentPage} from {repositoriesStore.totalPages}</p>
+                <button
+                    className={'button_colored'} onClick={() => repositoriesStore.nextPage('df')}
+                    disabled={repositoriesStore.currentPage  === repositoriesStore.totalPages}
+                >
+                    Next
+                </button>
             </div>
         </div>
     );

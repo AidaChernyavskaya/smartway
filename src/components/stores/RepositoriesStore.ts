@@ -9,6 +9,7 @@ class RepositoriesStore {
     error: string | null = null;
     currentPage = 1;
     perPage = 12;
+    totalPages = 0;
 
     constructor() {
         makeAutoObservable(this);
@@ -22,6 +23,7 @@ class RepositoriesStore {
             .then(response => {
                 this.repositories = response.data.items;
                 this.totalCount = response.data.total_count;
+                this.totalPages = Math.ceil(response.data.total_count/ this.perPage);
             })
             .catch(error => {
                 this.error = error instanceof Error ? error.message : "Что-то пошло не так";
@@ -33,6 +35,16 @@ class RepositoriesStore {
 
     setIsLoading = (loading: boolean) => {
         this.isLoading = loading;
+    }
+
+    prevPage = (searchValue: string) => {
+        this.currentPage--;
+        this.fetchRepositories(searchValue);
+    }
+
+    nextPage = (searchValue: string) => {
+        this.currentPage++;
+        this.fetchRepositories(searchValue);
     }
 
 }
