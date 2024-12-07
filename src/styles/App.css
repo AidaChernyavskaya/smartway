@@ -81,4 +81,11 @@ html {
   transform: none;
 }
 
+.repos_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
 /*# sourceMappingURL=App.css.map */

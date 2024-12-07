@@ -2,11 +2,16 @@ import React, {useEffect} from 'react';
 import {observer} from "mobx-react-lite";
 import repositoriesStore from "../components/stores/RepositoriesStore";
 import RepoCardMini from "../components/repositories/RepoCardMini/RepoCardMini";
+import SearchField from "../components/library/SearchField/SearchField";
+import SortFilter from "../components/library/SortFilter/SortFilter";
+import searchValueStore from "../components/stores/SearchValue";
 
 const MainPage = observer(() => {
+    const searchValue = searchValueStore.searchValue;
+
     useEffect(() => {
-        repositoriesStore.fetchRepositories('df');
-    }, []);
+        repositoriesStore.fetchRepositories(searchValue);
+    }, [searchValue]);
 
     if (repositoriesStore.isLoading) {
         return <div>Загрузка...</div>;
@@ -18,7 +23,13 @@ const MainPage = observer(() => {
 
     return (
         <div className={'container'}>
-            <h2 className={'result'}>Result: {repositoriesStore.totalCount} repositories</h2>
+            <SearchField/>
+
+            <div className={'repos_info'}>
+                <h2 className={'result'}>Result: {repositoriesStore.totalCount} repositories</h2>
+                <SortFilter/>
+            </div>
+
             <div className={'repos'}>
                 {repositoriesStore.repositories.map((repo) => (
                     <RepoCardMini repo={repo} key={repo.id}/>
@@ -27,14 +38,14 @@ const MainPage = observer(() => {
 
             <div className={'pagination'}>
                 <button
-                    className={'button_colored'} onClick={() => repositoriesStore.prevPage('df')}
+                    className={'button_colored'} onClick={() => repositoriesStore.prevPage(searchValue)}
                     disabled={repositoriesStore.currentPage === 1}
                 >
                     Prev
                 </button>
                 <p className={'pages'}>page {repositoriesStore.currentPage} from {repositoriesStore.totalPages}</p>
                 <button
-                    className={'button_colored'} onClick={() => repositoriesStore.nextPage('df')}
+                    className={'button_colored'} onClick={() => repositoriesStore.nextPage(searchValue)}
                     disabled={repositoriesStore.currentPage  === repositoriesStore.totalPages}
                 >
                     Next

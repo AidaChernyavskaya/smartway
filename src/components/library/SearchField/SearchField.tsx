@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './SearchField.module.css';
+import searchValueStore from "../../stores/SearchValue";
+import {observer} from "mobx-react-lite";
 
-const SearchField = () => {
-    const [searchValue, setSearchValue] = useState('')
+const SearchField = observer(() => {
+    const {searchValue, setSearchValue} = searchValueStore;
 
     return (
         <input
@@ -10,6 +12,6 @@ const SearchField = () => {
             value={searchValue} onChange={(e) => setSearchValue(e.target.value)}
         />
     );
-};
+});
 
 export default SearchField;
