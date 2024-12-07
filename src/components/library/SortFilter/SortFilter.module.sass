@@ -1,6 +1,6 @@
 .sort_container
   width: 30rem
-  @media (max-width: 500px)
+  @media (max-width: 750px)
     width: 100%
 
 .sort
@@ -15,8 +15,9 @@
   align-items: center
   width: 30rem
   position: relative
-  @media (max-width: 500px)
+  @media (max-width: 750px)
     width: 100%
+    //margin-bottom: 2rem
   &_name
     font-size: 1.6rem
     color: #161616
@@ -37,6 +38,10 @@
   position: absolute
   width: 30rem
   box-shadow: 0 .6rem .6rem rgba(112, 112, 112, 0.44)
+  @media (max-width: 750px)
+    width: calc(100vw - 16rem)
+  @media (max-width: 500px)
+    width: calc(100vw - 4rem)
   &_item
     font-size: 1.6rem
     color: #161616
@@ -46,5 +51,4 @@
       border-bottom: rgba(#161616, .1) solid 1px
     &:first-child
       border-top: rgba(#161616, .1) solid 1px
-
 

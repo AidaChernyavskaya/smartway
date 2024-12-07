@@ -1,7 +1,7 @@
 .sort_container {
   width: 30rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .sort_container {
     width: 100%;
   }
@@ -20,7 +20,7 @@
   width: 30rem;
   position: relative;
 }
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .sort {
     width: 100%;
   }
@@ -47,6 +47,16 @@
   position: absolute;
   width: 30rem;
   box-shadow: 0 0.6rem 0.6rem rgba(112, 112, 112, 0.44);
+}
+@media (max-width: 750px) {
+  .variants {
+    width: calc(100vw - 16rem);
+  }
+}
+@media (max-width: 500px) {
+  .variants {
+    width: calc(100vw - 4rem);
+  }
 }
 .variants_item {
   font-size: 1.6rem;

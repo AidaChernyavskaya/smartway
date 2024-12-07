@@ -7,7 +7,7 @@ html
   font-size: 62.5%
   font-family: "Noto Sans", sans-serif
   @media (max-width: 600px)
-    font-size: 50%
+    font-size: 55%
   background: rgba(#3A3A3A, .04)
 
 .container
@@ -23,6 +23,8 @@ html
   font-size: 2.2rem
   color: #101828
   font-weight: 600
+  @media (max-width: 750px)
+    margin-top: 2rem
 
 .repos
   display: grid
@@ -66,3 +68,10 @@ html
   justify-content: space-between
   align-items: center
   margin-bottom: 3rem
+  @media (max-width: 750px)
+    flex-direction: column-reverse
+  //display: grid
+  //grid-template-columns: auto minmax(auto, 30rem)
+  //grid-gap: 2rem
+  //margin-bottom: 3rem
+  //align-items: center
