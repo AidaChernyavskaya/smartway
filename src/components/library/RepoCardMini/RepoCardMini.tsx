@@ -19,7 +19,7 @@ const RepoCardMini: FC<RepoCardMini> = ({repo}) => {
             <CardMiniTags repo={repo}/>
             <h3 className={styles.login}>{repo.owner.login}</h3>
             <h4 className={styles.full_name}>{repo.full_name}</h4>
-            <ButtonsGroupCardMini/>
+            <ButtonsGroupCardMini repo={repo}/>
             {/*<div className={styles.buttons}>*/}
             {/*    <button className={cn(styles.button, styles.button_transparent)}>*/}
             {/*        <img src={HeartTransparent} alt={'Add to favourites'} className={cn(styles.button_icon, styles.heart)}/>*/}

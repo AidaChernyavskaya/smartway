@@ -40,7 +40,7 @@ const RepoCardDetailed = () => {
 
             <hr className={styles.hr}/>
 
-            <ButtonsGroupCardDetailed/>
+            <ButtonsGroupCardDetailed repo={repo}/>
 
             {/*<div className={styles.buttons}>*/}
             {/*    <button className={cn(styles.button, styles.button_transparent)}>*/}

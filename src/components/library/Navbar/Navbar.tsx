@@ -5,10 +5,12 @@ import HeartFilled from '../../../static/heart_filled.svg';
 import AccountPhoto from '../../../static/account_photo.svg';
 import cn from 'classnames';
 import {Link} from "react-router";
+import {observer} from "mobx-react-lite";
+import favouritesStore from "../../stores/FavouritesStore";
 
-const Navbar = () => {
+const Navbar = observer(() => {
 
-    const likes = 0
+    const likes = favouritesStore.totalAmount;
 
     return (
         <header className={styles.navbar}>
@@ -30,6 +32,6 @@ const Navbar = () => {
 
         </header>
     );
-};
+});
 
 export default Navbar;
