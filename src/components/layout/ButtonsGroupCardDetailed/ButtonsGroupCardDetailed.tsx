@@ -4,7 +4,7 @@ import CopyIcon from "../../../static/copy.svg";
 import ButtonColored from "../../library/ButtonColored/ButtonColored";
 import ButtonLike from "../../library/ButtonLike/ButtonLike";
 import ButtonWithIcon from "../../library/ButtonWithIcon/ButtonWithIcon";
-import {Repository} from "../../../types";
+import {ButtonSize, Repository} from "../../../types";
 import copy from 'clipboard-copy';
 
 interface ButtonsGroupCardDetailed {
@@ -12,19 +12,19 @@ interface ButtonsGroupCardDetailed {
 }
 
 const ButtonsGroupCardDetailed: FC<ButtonsGroupCardDetailed> = ({repo}) => {
-    const handleClick = () => {
+    const handleOpenRepoClick = () => {
         window.open(repo.html_url, "_blank");
     }
 
-    const handleCopy = () => {
+    const handleCopyClick = () => {
         copy(repo.html_url);
     }
 
     return (
         <div className={styles.buttons}>
-            <ButtonWithIcon size={'big'} icon={CopyIcon} alt={'Copy URL'} onClick={handleCopy}/>
-            <ButtonLike size={'big'} repo={repo}/>
-            <ButtonColored text={'Открыть репозиторий'} size={'big'} onClick={handleClick}/>
+            <ButtonWithIcon size={ButtonSize.big} icon={CopyIcon} alt={'Copy URL'} onClick={handleCopyClick}/>
+            <ButtonLike size={ButtonSize.big} repo={repo}/>
+            <ButtonColored text={'Открыть репозиторий'} size={ButtonSize.big} onClick={handleOpenRepoClick}/>
         </div>
     );
 };

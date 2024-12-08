@@ -1,12 +1,14 @@
 import React, {useEffect} from 'react';
-import repositoriesStore from "../../stores/RepositoriesStore";
+import repositoriesStore from "../../../stores/RepositoriesStore";
 import RepoCardMini from "../../library/RepoCardMini/RepoCardMini";
 import styles from './RepositoriesListLayout.module.css';
 import {observer} from "mobx-react-lite";
-import searchValueStore from "../../stores/SearchValueStore";
-import sortValueStore from "../../stores/SortValueStore";
+import searchValueStore from "../../../stores/SearchValueStore";
+import sortValueStore from "../../../stores/SortValueStore";
 import PaginationButtons from "../PaginationButtons/PaginationButtons";
 import Loader from "../../library/Loader/Loader";
+
+const TIMEOUT = 300;
 
 const RepositoriesListLayout = observer(() => {
     const searchValue = searchValueStore.searchValue;
@@ -14,12 +16,12 @@ const RepositoriesListLayout = observer(() => {
     const order = sortValueStore.order;
 
     useEffect(() => {
-        let timerId = setTimeout(() => {
+        let debounceTimerId = setTimeout(() => {
             repositoriesStore.resetPages();
             repositoriesStore.resetRepositories();
-            repositoriesStore.fetchRepositories(searchValue, sortValue, order);
-        }, 300)
-        return () => clearTimeout(timerId);
+            repositoriesStore.loadRepositories(searchValue, sortValue, order);
+        }, TIMEOUT)
+        return () => clearTimeout(debounceTimerId);
     }, [searchValue, sortValue, order]);
 
     if (repositoriesStore.totalCount === 0) {

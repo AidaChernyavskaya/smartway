@@ -6,7 +6,7 @@ import AccountPhoto from '../../../static/account_photo.svg';
 import cn from 'classnames';
 import {Link} from "react-router";
 import {observer} from "mobx-react-lite";
-import favouritesStore from "../../stores/FavouritesStore";
+import favouritesStore from "../../../stores/FavouritesStore";
 
 const Navbar = observer(() => {
     const likes = favouritesStore.totalAmount;
@@ -28,7 +28,6 @@ const Navbar = observer(() => {
                     <img src={AccountPhoto} alt={'Account photo'} className={styles.button_icon}/>
                 </button>
             </div>
-
         </header>
     );
 });

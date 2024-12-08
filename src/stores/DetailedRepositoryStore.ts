@@ -1,6 +1,6 @@
-import {Repository} from "../../types";
+import {Repository} from "../types";
 import {makeAutoObservable} from "mobx";
-import RepositoriesService from "../../API/RepositoriesService";
+import RepositoriesService from "../API/RepositoriesService";
 
 class DetailedRepositoryStore {
     repository: Repository | null = null;
@@ -11,7 +11,7 @@ class DetailedRepositoryStore {
         makeAutoObservable(this);
     }
 
-    async fetchDetailedRepository (owner: string, repoName: string) {
+    async loadDetailedRepository (owner: string, repoName: string) {
         this.setIsLoading(true);
         this.setError(null);
         await RepositoriesService.getDetailedRepository(owner, repoName)

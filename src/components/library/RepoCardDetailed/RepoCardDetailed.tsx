@@ -4,10 +4,10 @@ import ProfileProperties from "../../layout/ProfileProperties/ProfileProperties"
 import ButtonsGroupCardDetailed from "../../layout/ButtonsGroupCardDetailed/ButtonsGroupCardDetailed";
 import {observer} from "mobx-react-lite";
 import {useParams} from "react-router";
-import DetailedRepositoryStore from "../../stores/DetailedRepositoryStore";
-import detailedRepositoryStore from "../../stores/DetailedRepositoryStore";
+import DetailedRepositoryStore from "../../../stores/DetailedRepositoryStore";
+import detailedRepositoryStore from "../../../stores/DetailedRepositoryStore";
 import Loader from "../Loader/Loader";
-import repositoriesStore from "../../stores/RepositoriesStore";
+import repositoriesStore from "../../../stores/RepositoriesStore";
 
 const RepoCardDetailed = observer(() => {
     const { owner, repoName } = useParams();
@@ -15,7 +15,7 @@ const RepoCardDetailed = observer(() => {
 
     useEffect(() => {
         if (owner && repoName) {
-            DetailedRepositoryStore.fetchDetailedRepository(owner, repoName)
+            DetailedRepositoryStore.loadDetailedRepository(owner, repoName)
         }
     }, [owner, repoName])
 

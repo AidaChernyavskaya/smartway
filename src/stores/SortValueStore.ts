@@ -1,4 +1,4 @@
-import {SortFields, SortOrder} from "../../types";
+import {SortFields, SortOrder} from "../types";
 import {makeAutoObservable} from "mobx";
 
 class SortValueStore {
@@ -16,7 +16,6 @@ class SortValueStore {
     setOrder = (value: SortOrder) => {
         this.order = value;
     }
-
 }
 
 const sortValueStore = new SortValueStore();

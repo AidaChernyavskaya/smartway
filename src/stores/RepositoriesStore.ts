@@ -1,6 +1,8 @@
 import {makeAutoObservable} from "mobx";
-import RepositoriesService from "../../API/RepositoriesService";
-import {Repository, SortFields, SortOrder} from "../../types";
+import RepositoriesService from "../API/RepositoriesService";
+import {Repository, SortFields, SortOrder} from "../types";
+import {AxiosResponse} from "axios";
+import {useNavigate} from "react-router";
 
 class RepositoriesStore {
     repositories: Array<Repository> = [];
@@ -15,9 +17,9 @@ class RepositoriesStore {
         makeAutoObservable(this);
     }
 
-    async fetchRepositories (searchValue: string, sortValue: SortFields, order: SortOrder) {
+    async loadRepositories (searchValue: string, sortValue: SortFields, order: SortOrder) {
         if (searchValue.length === 0) {
-            this.repositories = [];
+            this.setRepositories([]);
             this.setTotalCount(0);
         } else {
             this.setIsLoading(true);
@@ -26,9 +28,7 @@ class RepositoriesStore {
                 {q: searchValue, sort: sortValue, order: order, per_page: this.perPage, page: this.currentPage}
             )
                 .then(response => {
-                    this.repositories = response.data.items;
-                    this.setTotalCount(response.data.total_count);
-                    this.totalPages = Math.ceil(response.data.total_count/ this.perPage);
+                    this.setData(response);
                 })
                 .catch(error => {
                     if(error.status === 403) {
@@ -45,12 +45,18 @@ class RepositoriesStore {
 
     prevPage = (searchValue: string, sortValue: SortFields, order: SortOrder) => {
         this.currentPage--;
-        this.fetchRepositories(searchValue, sortValue, order);
+        this.loadRepositories(searchValue, sortValue, order);
     }
 
     nextPage = (searchValue: string, sortValue: SortFields, order: SortOrder) => {
         this.currentPage++;
-        this.fetchRepositories(searchValue, sortValue, order);
+        this.loadRepositories(searchValue, sortValue, order);
+    }
+
+    setData = (response: AxiosResponse) => {
+        this.setRepositories(response.data.items);
+        this.setTotalCount(response.data.total_count);
+        this.totalPages = Math.ceil(response.data.total_count/ this.perPage);
     }
 
     resetPages = () => {
@@ -61,6 +67,11 @@ class RepositoriesStore {
     resetRepositories = () => {
         this.repositories = [];
     };
+
+    setRepositories = (repos: Repository[]) => {
+        this.repositories = repos;
+    }
+
 
     setIsLoading = (loading: boolean) => {
         this.isLoading = loading;

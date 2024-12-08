@@ -1,9 +1,9 @@
 import React from 'react';
-import repositoriesStore from "../../stores/RepositoriesStore";
+import repositoriesStore from "../../../stores/RepositoriesStore";
 import {observer} from "mobx-react-lite";
 import styles from './PaginationButtons.module.css';
-import searchValueStore from "../../stores/SearchValueStore";
-import sortValueStore from "../../stores/SortValueStore";
+import searchValueStore from "../../../stores/SearchValueStore";
+import sortValueStore from "../../../stores/SortValueStore";
 
 const PaginationButtons = observer(() => {
     const searchValue = searchValueStore.searchValue;

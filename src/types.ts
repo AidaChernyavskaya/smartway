@@ -41,4 +41,21 @@ export type MiniTag = {
     info: number | string;
 }
 
-export type ProfileTagProperty = [string, string, string];
+export type ProfileTagProperty = {
+    icon: string;
+    info: string;
+    about: string;
+}
+
+export enum ButtonSize {
+    small = 'small',
+    big = 'big'
+}
+
+export type Params = {
+    q?: string;
+    sort?: SortFields;
+    order?: SortOrder;
+    per_page?: number;
+    page?: number;
+}

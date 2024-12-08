@@ -1,0 +1,7 @@
+.repos_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-gap: 2.4rem;
+}
+
+/*# sourceMappingURL=FavouritesReposList.module.css.map */

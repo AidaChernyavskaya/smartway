@@ -4,18 +4,18 @@ import HeartTransparent from "../../../static/heart_transparent.svg";
 import HeartColored from '../../../static/heart_colored.svg';
 import styles from '../ButtonWithIcon/ButtonWithIcon.module.css';
 import {observer} from "mobx-react-lite";
-import favouritesStore from "../../stores/FavouritesStore";
-import {Repository} from "../../../types";
+import favouritesStore from "../../../stores/FavouritesStore";
+import {ButtonSize, Repository} from "../../../types";
 
 interface ButtonLike {
-    size: 'small' | 'big';
+    size: ButtonSize;
     repo: Repository;
 }
 
 const ButtonLike: FC<ButtonLike> = observer(({size, repo}) => {
 
     const handleClick = () => {
-        if (favouritesStore.isDataExist(repo)) {
+        if (favouritesStore.isFavouriteRepository(repo)) {
             favouritesStore.removeData(repo);
         } else {
             favouritesStore.addData(repo);
@@ -23,9 +23,9 @@ const ButtonLike: FC<ButtonLike> = observer(({size, repo}) => {
     }
 
     return (
-        <button className={cn(styles.button, size === 'small' ? styles.small : styles.big)} onClick={handleClick}>
+        <button className={cn(styles.button, styles[size])} onClick={handleClick}>
             <img
-                src={favouritesStore.isDataExist(repo) ? HeartColored : HeartTransparent}
+                src={favouritesStore.isFavouriteRepository(repo) ? HeartColored : HeartTransparent}
                 alt={'Add to favourites'} className={styles.button_icon}
             />
         </button>

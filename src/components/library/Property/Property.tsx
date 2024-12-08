@@ -8,6 +8,10 @@ interface Property {
 }
 
 const Property: FC<Property> = ({icon, info, text}) => {
+    if(!info) {
+        return <></>
+    }
+
     return (
         <div className={styles.property}>
             <div className={styles.property_icon__container}>
