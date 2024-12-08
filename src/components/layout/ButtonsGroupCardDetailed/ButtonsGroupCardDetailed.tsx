@@ -5,6 +5,7 @@ import ButtonColored from "../../library/ButtonColored/ButtonColored";
 import ButtonLike from "../../library/ButtonLike/ButtonLike";
 import ButtonWithIcon from "../../library/ButtonWithIcon/ButtonWithIcon";
 import {Repository} from "../../../types";
+import copy from 'clipboard-copy';
 import {useNavigate} from "react-router";
 
 interface ButtonsGroupCardDetailed {
@@ -17,9 +18,13 @@ const ButtonsGroupCardDetailed: FC<ButtonsGroupCardDetailed> = ({repo}) => {
         window.open(repo.html_url, "_blank");
     }
 
+    const handleCopy = () => {
+        copy(repo.html_url);
+    }
+
     return (
         <div className={styles.buttons}>
-            <ButtonWithIcon size={'big'} icon={CopyIcon} alt={'Copy URL'}/>
+            <ButtonWithIcon size={'big'} icon={CopyIcon} alt={'Copy URL'} onClick={handleCopy}/>
             <ButtonLike size={'big'} repo={repo}/>
             <ButtonColored text={'Открыть репозиторий'} size={'big'} onClick={handleClick}/>
         </div>

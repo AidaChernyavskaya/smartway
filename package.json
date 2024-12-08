@@ -9,6 +9,7 @@
     "@types/react-dom": "^19.0.0",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
+    "clipboard-copy": "^4.0.1",
     "cra-template-typescript": "1.2.0",
     "mobx": "^6.13.5",
     "mobx-react-lite": "^4.0.7",
