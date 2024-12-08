@@ -25,6 +25,11 @@
   grid-row-gap: 2.4rem;
   margin-bottom: 2.4rem;
 }
+@media (max-width: 600px) {
+  .profile_info {
+    grid-template-columns: min-content auto;
+  }
+}
 
 .avatar {
   width: 12.5rem;
@@ -34,6 +39,12 @@
   grid-row: 1/-1;
   align-self: start;
 }
+@media (max-width: 600px) {
+  .avatar {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
 
 .full_name {
   font-size: 2.4rem;
@@ -41,6 +52,8 @@
   align-self: center;
   overflow-wrap: break-word;
   word-break: break-word;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 .description {
@@ -48,12 +61,31 @@
   font-size: 2rem;
   line-height: 140%;
   align-self: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+}
+@media (max-width: 600px) {
+  .description {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    justify-self: center;
+  }
 }
 
 .hr {
   border: none;
   border-bottom: rgba(33, 34, 35, 0.08) solid 1px;
   margin-bottom: 2.4rem;
+}
+
+.error {
+  font-size: 2.2rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=RepoCardDetailed.module.css.map */

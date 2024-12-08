@@ -1,4 +1,4 @@
-import {Repository, sortFields, sortOrder} from "../../types";
+import {Repository, SortFields, SortOrder} from "../../types";
 import {makeAutoObservable} from "mobx";
 
 class FavouritesStore {
@@ -39,14 +39,14 @@ class FavouritesStore {
     }
     // todo: переписать универсально
 
-    sortData(sortFields: sortFields, sortingOrder: sortOrder) {
+    sortData(sortFields: SortFields, sortingOrder: SortOrder) {
         let compareFn;
-        if (sortFields === 'stars' && sortingOrder === sortOrder.desc) {
+        if (sortFields === 'stars' && sortingOrder === SortOrder.desc) {
 
             compareFn = (a: Repository, b: Repository) => b.stargazers_count - a.stargazers_count
-        } else if (sortFields === 'forks' && sortingOrder === 'desc') {
+        } else if (sortFields === 'forks' && sortingOrder === SortOrder.desc) {
             compareFn = (a: Repository, b: Repository) => b.forks_count - a.forks_count
-        } else if (sortFields === 'updated' && sortingOrder === 'desc') {
+        } else if (sortFields === 'updated' && sortingOrder === SortOrder.desc) {
             compareFn = (a: Repository, b: Repository) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         } else {
             compareFn = (a: Repository, b: Repository) => new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()

@@ -18,20 +18,20 @@ export type Owner = {
     avatar_url: string;
 }
 
-export enum sortFields {
+export enum SortFields {
     stars = 'stars',
     forks = 'forks',
     updated = 'updated'
 }
 
-export enum sortOrder {
+export enum SortOrder {
     desc = 'desc',
     asc = 'asc',
 }
 
 export type SortingVariable = {
-    sortField: sortFields;
-    sortOrder: sortOrder;
+    sortField: SortFields;
+    sortOrder: SortOrder;
     text: string;
 }
 
@@ -40,3 +40,5 @@ export type MiniTag = {
     alt: string;
     info: number | string;
 }
+
+export type ProfileTagProperty = [string, string, string];

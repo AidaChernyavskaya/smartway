@@ -6,12 +6,10 @@ import ButtonLike from "../../library/ButtonLike/ButtonLike";
 import ButtonWithIcon from "../../library/ButtonWithIcon/ButtonWithIcon";
 import {Repository} from "../../../types";
 import copy from 'clipboard-copy';
-import {useNavigate} from "react-router";
 
 interface ButtonsGroupCardDetailed {
     repo: Repository
 }
-
 
 const ButtonsGroupCardDetailed: FC<ButtonsGroupCardDetailed> = ({repo}) => {
     const handleClick = () => {

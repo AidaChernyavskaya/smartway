@@ -9,7 +9,6 @@ import {observer} from "mobx-react-lite";
 import favouritesStore from "../../stores/FavouritesStore";
 
 const Navbar = observer(() => {
-
     const likes = favouritesStore.totalAmount;
 
     return (

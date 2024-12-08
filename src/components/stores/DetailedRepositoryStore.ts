@@ -1,4 +1,4 @@
-import {Repository, sortFields, sortOrder} from "../../types";
+import {Repository} from "../../types";
 import {makeAutoObservable} from "mobx";
 import RepositoriesService from "../../API/RepositoriesService";
 
@@ -12,23 +12,35 @@ class DetailedRepositoryStore {
     }
 
     async fetchDetailedRepository (owner: string, repoName: string) {
-        this.isLoading = true;
-        this.error = null;
+        this.setIsLoading(true);
+        this.setError(null);
         await RepositoriesService.getDetailedRepository(owner, repoName)
             .then(response => {
-                this.repository = response.data;
+                this.setRepository(response.data);
             })
             .catch(error => {
                 if(error.status === 403) {
-                    this.error = '403 - превышен лимит запросов к API, попробуйте позже'
+                    this.setError('403 - превышен лимит запросов к API, попробуйте позже');
                 } else {
-                    this.error = error instanceof Error ? error.message : "Что-то пошло не так";
+                    this.setError(error instanceof Error ? error.message : "Что-то пошло не так");
                 }
             })
             .finally(() => {
-                this.isLoading = false;
+                this.setIsLoading(false);
             })
-        }
+    }
+
+    setIsLoading = (loading: boolean) => {
+        this.isLoading = loading;
+    }
+
+    setRepository = (repo: Repository) => {
+        this.repository = repo;
+    }
+
+    setError = (err: string | null) => {
+        this.error = err;
+    }
 }
 
 const detailedRepositoryStore = new DetailedRepositoryStore();

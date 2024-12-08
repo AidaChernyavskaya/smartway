@@ -4,19 +4,17 @@ import ArrowDown from '../../../static/arrow_down.svg';
 import cn from "classnames";
 import {observer} from "mobx-react-lite";
 import sortValueStore from "../../stores/SortValueStore";
-import {sortFields, SortingVariable, sortOrder} from "../../../types";
-
-// const sortTypes: Sort[] = ['stars', 'forks', 'updated'];
+import {SortFields, SortingVariable, SortOrder} from "../../../types";
 
 const sortingVariables: SortingVariable[] = [
-    {sortField: sortFields.stars, sortOrder: sortOrder.desc, text: 'Most stars'},
-    {sortField: sortFields.forks, sortOrder: sortOrder.desc, text: 'Most forks'},
-    {sortField: sortFields.updated, sortOrder: sortOrder.desc, text: 'New first'},
-    {sortField: sortFields.updated, sortOrder: sortOrder.asc, text: 'Old first'},
+    {sortField: SortFields.stars, sortOrder: SortOrder.desc, text: 'Most stars'},
+    {sortField: SortFields.forks, sortOrder: SortOrder.desc, text: 'Most forks'},
+    {sortField: SortFields.updated, sortOrder: SortOrder.desc, text: 'New first'},
+    {sortField: SortFields.updated, sortOrder: SortOrder.asc, text: 'Old first'},
 ]
 
 const SortFilter = observer(() => {
-    const {sortValue, setSortValue, order, setOrder} = sortValueStore;
+    const {setSortValue, setOrder} = sortValueStore;
     const [sortType, setSortType] = useState('Most stars');
     const [isOpen, setIsOpen] = useState(false);
 

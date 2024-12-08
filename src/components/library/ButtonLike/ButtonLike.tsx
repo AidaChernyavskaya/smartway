@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import cn from "classnames";
 import HeartTransparent from "../../../static/heart_transparent.svg";
 import HeartColored from '../../../static/heart_colored.svg';
@@ -9,13 +9,12 @@ import {Repository} from "../../../types";
 
 interface ButtonLike {
     size: 'small' | 'big';
-    repo: Repository
+    repo: Repository;
 }
 
 const ButtonLike: FC<ButtonLike> = observer(({size, repo}) => {
 
     const handleClick = () => {
-        console.log('repo', repo)
         if (favouritesStore.isDataExist(repo)) {
             favouritesStore.removeData(repo);
         } else {
@@ -25,7 +24,10 @@ const ButtonLike: FC<ButtonLike> = observer(({size, repo}) => {
 
     return (
         <button className={cn(styles.button, size === 'small' ? styles.small : styles.big)} onClick={handleClick}>
-            <img src={favouritesStore.isDataExist(repo) ? HeartColored : HeartTransparent} alt={'Add to favourites'} className={styles.button_icon}/>
+            <img
+                src={favouritesStore.isDataExist(repo) ? HeartColored : HeartTransparent}
+                alt={'Add to favourites'} className={styles.button_icon}
+            />
         </button>
     );
 });

@@ -6,21 +6,15 @@ import ArchiveIcon from "../../../static/archive.svg";
 import LanguageIcon from "../../../static/language.svg";
 import FolderIcon from "../../../static/folder.svg";
 import UpdateIcon from "../../../static/update.svg";
-// import {repo} from "../../library/RepoCardDetailed/RepoCardDetailed";
 import Property from "../../library/Property/Property";
 import {observer} from "mobx-react-lite";
 import detailedRepositoryStore from "../../stores/DetailedRepositoryStore";
-
-export type RepositoryProperty = [string, string, string];
-
-const dateFormatting = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('ru-RU')
-}
+import {dateFormatting} from "../../../formatters";
+import {ProfileTagProperty} from "../../../types";
 
 const ProfileProperties = observer(() => {
     const repo = detailedRepositoryStore.repository;
-    let properties: RepositoryProperty[] = []
+    let properties: ProfileTagProperty[] = [];
 
     if (repo) {
         properties = [
