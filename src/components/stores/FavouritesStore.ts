@@ -37,6 +37,10 @@ class FavouritesStore {
         this.totalAmount--;
         this.saveData();
     }
+
+    sortData() {
+
+    }
 }
 
 const favouritesStore = new FavouritesStore();

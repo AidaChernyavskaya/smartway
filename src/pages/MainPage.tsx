@@ -7,7 +7,7 @@ const MainPage = () => {
     return (
         <div className={'container'}>
             <SearchField/>
-            <SortFieldLayout/>
+            <SortFieldLayout showed={'all'}/>
             <RepositoriesListLayout/>
         </div>
     );

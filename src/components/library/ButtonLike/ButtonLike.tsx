@@ -14,10 +14,7 @@ interface ButtonLike {
 
 const ButtonLike: FC<ButtonLike> = observer(({size, repo}) => {
 
-    const [isLiked, setIsLiked] = useState(false);
-
     const handleClick = () => {
-        setIsLiked((prev) => !prev)
         console.log('repo', repo)
         if (favouritesStore.isDataExist(repo)) {
             favouritesStore.removeData(repo);
@@ -28,7 +25,7 @@ const ButtonLike: FC<ButtonLike> = observer(({size, repo}) => {
 
     return (
         <button className={cn(styles.button, size === 'small' ? styles.small : styles.big)} onClick={handleClick}>
-            <img src={isLiked ? HeartColored : HeartTransparent} alt={'Add to favourites'} className={styles.button_icon}/>
+            <img src={favouritesStore.isDataExist(repo) ? HeartColored : HeartTransparent} alt={'Add to favourites'} className={styles.button_icon}/>
         </button>
     );
 });
