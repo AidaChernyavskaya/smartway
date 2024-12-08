@@ -12,7 +12,7 @@ const AppRouter = () => {
                 <Route index element={<MainPage/>}/>
                 <Route path={""} element={<MainPage/>}/>
                 <Route path={"favourites"} element={<Favourites/>}/>
-                <Route path={"/repositories/:owner/:repo"} element={<DetailedInfo/>}/>
+                <Route path={"/repositories/:owner/:repoName"} element={<DetailedInfo/>}/>
                 <Route path="*" element={<Navigate replace to="/"/>}/>
             </Route>
         </Routes>

@@ -4,12 +4,13 @@ import cn from "classnames";
 
 interface ButtonColored {
     text: string;
-    size: 'small' | 'big'
+    size: 'small' | 'big';
+    onClick: () => void;
 }
 
-const ButtonColored: FC<ButtonColored> = ({size, text}) => {
+const ButtonColored: FC<ButtonColored> = ({size, text, onClick}) => {
     return (
-        <button className={cn(styles.button_colored, size === 'small' ? styles.small: styles.big)}>
+        <button className={cn(styles.button_colored, size === 'small' ? styles.small: styles.big)} onClick={onClick}>
             <p className={styles.button_text}>{text}</p>
         </button>
     );

@@ -16,7 +16,8 @@
   font-size: 1.4rem;
   color: #1E89F0;
   margin-bottom: 1.6rem;
-  overflow: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /*# sourceMappingURL=RepoCardMini.module.css.map */

@@ -5,6 +5,7 @@ import ButtonColored from "../../library/ButtonColored/ButtonColored";
 import ButtonLike from "../../library/ButtonLike/ButtonLike";
 import ButtonWithIcon from "../../library/ButtonWithIcon/ButtonWithIcon";
 import {Repository} from "../../../types";
+import {useNavigate} from "react-router";
 
 interface ButtonsGroupCardDetailed {
     repo: Repository
@@ -12,11 +13,18 @@ interface ButtonsGroupCardDetailed {
 
 
 const ButtonsGroupCardDetailed: FC<ButtonsGroupCardDetailed> = ({repo}) => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/repositories/${repo.owner.login}/${repo.name}`)
+    }
+
     return (
         <div className={styles.buttons}>
             <ButtonWithIcon size={'big'} icon={CopyIcon} alt={'Copy URL'}/>
             <ButtonLike size={'big'} repo={repo}/>
-            <ButtonColored text={'Открыть репозиторий'} size={'big'}/>
+            <ButtonColored text={'Открыть репозиторий'} size={'big'} onClick={handleClick}/>
         </div>
     );
 };
