@@ -1,4 +1,4 @@
-import {Repository} from "../../types";
+import {Repository, sortFields, sortOrder} from "../../types";
 import {makeAutoObservable} from "mobx";
 
 class FavouritesStore {
@@ -38,8 +38,20 @@ class FavouritesStore {
         this.saveData();
     }
 
-    sortData() {
-
+    sortData(sortFields: sortFields, sortOrder: sortOrder) {
+        if (sortFields === 'stars' && sortOrder === 'desc') {
+            return this.favourites.slice().sort((a, b) =>
+                b.stargazers_count - a.stargazers_count)
+        } else if (sortFields === 'forks' && sortOrder === 'desc') {
+            return this.favourites.slice().sort((a, b) =>
+                b.forks_count - a.forks_count)
+        } else if (sortFields === 'updated' && sortOrder === 'desc') {
+            return this.favourites.slice().sort((a, b) =>
+                new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+        } else {
+            return this.favourites.slice().sort((a, b) =>
+                new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime())
+        }
     }
 }
 
