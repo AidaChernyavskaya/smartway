@@ -13,11 +13,8 @@ interface ButtonsGroupCardDetailed {
 
 
 const ButtonsGroupCardDetailed: FC<ButtonsGroupCardDetailed> = ({repo}) => {
-
-    const navigate = useNavigate();
-
     const handleClick = () => {
-        navigate(`/repositories/${repo.owner.login}/${repo.name}`)
+        window.open(repo.html_url, "_blank");
     }
 
     return (
