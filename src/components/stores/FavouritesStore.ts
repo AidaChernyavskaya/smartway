@@ -37,21 +37,21 @@ class FavouritesStore {
         this.totalAmount--;
         this.saveData();
     }
+    // todo: переписать универсально
 
-    sortData(sortFields: sortFields, sortOrder: sortOrder) {
-        if (sortFields === 'stars' && sortOrder === 'desc') {
-            return this.favourites.slice().sort((a, b) =>
-                b.stargazers_count - a.stargazers_count)
-        } else if (sortFields === 'forks' && sortOrder === 'desc') {
-            return this.favourites.slice().sort((a, b) =>
-                b.forks_count - a.forks_count)
-        } else if (sortFields === 'updated' && sortOrder === 'desc') {
-            return this.favourites.slice().sort((a, b) =>
-                new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+    sortData(sortFields: sortFields, sortingOrder: sortOrder) {
+        let compareFn;
+        if (sortFields === 'stars' && sortingOrder === sortOrder.desc) {
+
+            compareFn = (a: Repository, b: Repository) => b.stargazers_count - a.stargazers_count
+        } else if (sortFields === 'forks' && sortingOrder === 'desc') {
+            compareFn = (a: Repository, b: Repository) => b.forks_count - a.forks_count
+        } else if (sortFields === 'updated' && sortingOrder === 'desc') {
+            compareFn = (a: Repository, b: Repository) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
         } else {
-            return this.favourites.slice().sort((a, b) =>
-                new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime())
+            compareFn = (a: Repository, b: Repository) => new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()
         }
+        return this.favourites.slice().sort(compareFn)
     }
 }
 

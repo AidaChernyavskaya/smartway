@@ -13,6 +13,11 @@ import detailedRepositoryStore from "../../stores/DetailedRepositoryStore";
 
 export type RepositoryProperty = [string, string, string];
 
+const dateFormatting = (dateStr: string) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('ru-RU')
+}
+
 const ProfileProperties = observer(() => {
     const repo = detailedRepositoryStore.repository;
     let properties: RepositoryProperty[] = []
@@ -23,12 +28,10 @@ const ProfileProperties = observer(() => {
             [ForkIcon, repo.forks_count.toString(), 'Количество форков'],
             [ArchiveIcon, repo.archived ? 'Да' : 'Нет', 'В архиве'],
             [LanguageIcon, repo.language, 'Язык'],
-            [FolderIcon, repo.created_at, 'Создано'],
-            [UpdateIcon, repo.created_at, 'Изменено']
+            [FolderIcon, dateFormatting(repo.created_at), 'Создано'],
+            [UpdateIcon, dateFormatting(repo.created_at), 'Изменено']
         ]
     }
-
-
 
     return (
         <div className={styles.profile_properties}>

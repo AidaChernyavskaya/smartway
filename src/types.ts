@@ -26,7 +26,7 @@ export enum sortFields {
 
 export enum sortOrder {
     desc = 'desc',
-    asc = 'asc'
+    asc = 'asc',
 }
 
 export type SortingVariable = {
