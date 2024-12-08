@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/smartway/static/css/main.43ec30c5.css",
-    "main.js": "/smartway/static/js/main.7905558d.js",
+    "main.js": "/smartway/static/js/main.cd39b13d.js",
     "static/media/fork.svg": "/smartway/static/media/fork.c289c41b665d331bc18b12bb918aab88.svg",
     "static/media/update.svg": "/smartway/static/media/update.16f4d904d49e15d99a6374adba5f8eca.svg",
     "static/media/language.svg": "/smartway/static/media/language.ec214fe66ca83839fe9941da4d27d70a.svg",
@@ -18,10 +18,10 @@
     "static/media/heart_colored.svg": "/smartway/static/media/heart_colored.b98cbf5d5ceaed11f7ce4d6bfbdde941.svg",
     "static/media/left.svg": "/smartway/static/media/left.58cbce34ca09cf57d9a599afe1e9eadd.svg",
     "main.43ec30c5.css.map": "/smartway/static/css/main.43ec30c5.css.map",
-    "main.7905558d.js.map": "/smartway/static/js/main.7905558d.js.map"
+    "main.cd39b13d.js.map": "/smartway/static/js/main.cd39b13d.js.map"
   },
   "entrypoints": [
     "static/css/main.43ec30c5.css",
-    "static/js/main.7905558d.js"
+    "static/js/main.cd39b13d.js"
   ]
 }
